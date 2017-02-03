@@ -22,7 +22,7 @@
     "build:vendor": "webpack --config config/vendor.webpack.conf.js --profile --colors --display-error-details --display-cached",
     "build:api": "webpack --config config/api.webpack.conf.js --profile --colors --display-error-details --display-cached",
     "build:local": "webpack --config config/local.webpack.conf.js --profile --colors --display-error-details --display-cached",
-    "server": "npm run server:local",
+    "server": "lite-server -c ./config/lite-server.json",
     "server:local": "webpack-dev-server --config config/local.webpack.conf.js --inline --progress --profile --watch  --content-base build/",
     "webdriver-manager": "webdriver-manager",
     "webdriver:update": "npm run webdriver-manager update",
@@ -50,6 +50,7 @@
   "license": "ISC",
   "homepage": "https://github.com/aleksey-gonchar/plain-ts-webpack-seed#readme",
   "dependencies": {
+    "lite-server": "^2.2.2",
     "@types/async": "^2.0.38",
     "@types/browser-sync": "0.0.34",
     "@types/lodash": "^4.14.50",

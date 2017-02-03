@@ -21,7 +21,7 @@ module.exports = {
       mainFiles: [ 'index' ]
     },
     output: {
-      path: helpers.root('public'),
+      path: helpers.root('build'),
       filename: '[name].js',
       sourceMapFilename: '[name].map',
       chunkFilename: '[id].chunk.js'

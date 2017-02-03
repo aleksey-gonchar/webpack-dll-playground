@@ -6,11 +6,11 @@ const webpackMerge = require('webpack-merge')
 const DefinePlugin = require('webpack/lib/DefinePlugin')
 const CompressionPlugin = require('compression-webpack-plugin')
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin')
-// const path = require('path')
+
 const helpers = require('./helpers')
+
 const config = require('./webpack.conf.js')
 
-// const ROOT_PATH = process.cwd()
 const ENV = process.env.ENV = 'local'
 process.env.NODE_ENV = 'development'
 

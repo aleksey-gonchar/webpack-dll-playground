@@ -4,8 +4,10 @@ const webpack = require('webpack')
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin')
 const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin')
-const manifest = require('../build/vendor-manifest.json');
+
 const helpers = require('./helpers')
+
+const vendorManifest = require('../build/vendor-manifest.json');
 const commonConfig = require('./common.webpack.conf.js')
 
 const METADATA = {
@@ -29,9 +31,9 @@ module.exports = {
       ),
       new webpack.DllReferencePlugin({
         context: helpers.root(),
-        manifest: manifest,
-        name: './vendor_dll.build.js',
-        sourceType: 'commonjs2'
+        manifest: vendorManifest,
+        name: './vendor.bundle.js',
+        sourceType: 'umd'
       })
     ]
   })

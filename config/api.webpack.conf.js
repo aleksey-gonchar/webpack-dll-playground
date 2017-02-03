@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const manifest = require('../build/vendor-manifest.json');
+const manifest = require('../build/vendor-vendorManifest.json');
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 const helpers = require('./helpers');
 
@@ -10,7 +10,7 @@ module.exports = {
   output: {
     path: helpers.root('build'),
     publicPath: './',
-    filename: 'api.build.js',
+    filename: 'api.bundle.js',
     library: 'api',
     libraryTarget: 'umd',
   },
@@ -24,7 +24,7 @@ module.exports = {
     new webpack.DllReferencePlugin({
       context: helpers.root(),
       manifest: manifest,
-      name: 'libs/vendor_dll.build.js',
-      sourceType: 'commonjs2'
+      name: './vendor.bundle.js',
+      sourceType: 'umd'
   })]
 };

@@ -23,7 +23,7 @@ module.exports = webpackMerge(config.data, {
   devtool: 'source-map',
   output: {
     library: 'ac_[name]',
-    libraryTarget: 'commonjs2',
+    libraryTarget: 'umd',
   },
   externals: {
     api: 'api'

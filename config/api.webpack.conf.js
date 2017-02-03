@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const manifest = require('../build/vendor-vendorManifest.json');
+const manifest = require('../build/vendor-manifest.json');
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 const helpers = require('./helpers');
 
@@ -24,7 +24,7 @@ module.exports = {
     new webpack.DllReferencePlugin({
       context: helpers.root(),
       manifest: manifest,
-      name: './vendor.bundle.js',
+      name: 'vendor',
       sourceType: 'umd'
   })]
 };

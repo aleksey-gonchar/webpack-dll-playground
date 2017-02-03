@@ -11,20 +11,15 @@ module.exports = {
     path: helpers.root('build'),
     publicPath: './',
     filename: 'api.bundle.js',
-    library: 'api',
+    library: 'api.bundle',
     libraryTarget: 'umd',
-  },
-  resolve: {
-    alias: {
-      libs: helpers.root('build')
-    }
   },
   plugins: [
     new ForkCheckerPlugin(),
     new webpack.DllReferencePlugin({
       context: helpers.root(),
       manifest: manifest,
-      name: 'vendor',
+      name: 'vendor.bundle',
       sourceType: 'umd'
   })]
 };

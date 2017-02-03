@@ -26,7 +26,8 @@ module.exports = webpackMerge(config.data, {
     libraryTarget: 'umd',
   },
   externals: {
-    api: 'api'
+    'api.bundle': 'api.bundle',
+    'vendor.bundle': 'vendor.bundle'
   },
   plugins: [
     new CompressionPlugin({

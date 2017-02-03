@@ -32,7 +32,7 @@ module.exports = {
       new webpack.DllReferencePlugin({
         context: helpers.root(),
         manifest: vendorManifest,
-        name: 'vendor',
+        name: 'vendor.bundle',
         sourceType: 'umd'
       })
     ]

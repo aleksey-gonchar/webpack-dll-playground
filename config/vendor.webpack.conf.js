@@ -10,13 +10,12 @@ module.exports = {
   output: {
     path: './build',
     filename: '[name].bundle.js',
-    library: '[name]',
+    library: '[name].bundle',
     libraryTarget: 'umd'
   },
 
   plugins: [new webpack.DllPlugin({
     context: helpers.root(),
-    name: '[name]',
-    path: 'build/[name]-vendorManifest.json',
+    path: 'build/[name]-manifest.json',
   })]
 };

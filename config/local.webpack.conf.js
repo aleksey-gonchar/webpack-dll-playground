@@ -27,7 +27,6 @@ module.exports = webpackMerge(config.data, {
   },
   externals: {
     'api.bundle': 'api.bundle',
-    'vendor.bundle': 'vendor.bundle'
   },
   plugins: [
     new CompressionPlugin({

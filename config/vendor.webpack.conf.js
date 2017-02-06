@@ -4,7 +4,7 @@ const context = helpers.root('src');
 
 module.exports = {
   entry: {
-    vendor: ['async', 'lodash'],
+    vendor: helpers.root('src', 'vendor.ts'),
   },
 
   output: {
@@ -12,10 +12,5 @@ module.exports = {
     filename: '[name].bundle.js',
     library: '[name].bundle',
     libraryTarget: 'umd'
-  },
-
-  plugins: [new webpack.DllPlugin({
-    context: helpers.root(),
-    path: 'build/[name]-manifest.json',
-  })]
-};
+  }
+}

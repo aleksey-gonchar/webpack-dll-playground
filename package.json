@@ -57,10 +57,12 @@
     "@types/node": "*",
     "@types/rimraf": "0.0.28",
     "@types/selenium-webdriver": "2.44.*",
-    "@types/webpack": "1.12.35"
+    "@types/webpack": "1.12.35",
+    "lodash": "4.17.4",
+    "@solid-opinion/vendor-core": "0.2.4"
   },
   "engines": {
-    "node": "6.8.1"
+    "node": "7.5.0"
   },
   "devDependencies": {
     "webpack": "^2.2.0",

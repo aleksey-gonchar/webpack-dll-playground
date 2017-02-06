@@ -17,9 +17,6 @@ module.exports = {
   plugins: [
     new ForkCheckerPlugin(),
     new webpack.DllReferencePlugin({
-      context: helpers.root(),
-      manifest: manifest,
-      name: 'vendor.bundle',
-      sourceType: 'umd'
-  })]
+      manifest: require('@solid-opinion/vendor-core/dist/bundle-manifest.json')
+    })]
 };

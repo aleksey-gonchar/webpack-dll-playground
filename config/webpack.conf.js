@@ -26,14 +26,11 @@ module.exports = {
       new ForkCheckerPlugin(),
       new ContextReplacementPlugin(
         // The (\\|\/) piece accounts for path separators in *nix and Windows
-        /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
         helpers.root('src') // location of your src
       ),
       new webpack.DllReferencePlugin({
         context: helpers.root(),
-        manifest: vendorManifest,
-        name: 'vendor.bundle',
-        sourceType: 'umd'
+        manifest: require('@solid-opinion/vendor-core/dist/bundle-manifest.json')
       })
     ]
   })

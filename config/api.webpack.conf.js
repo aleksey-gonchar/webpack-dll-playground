@@ -1,7 +1,8 @@
 const webpack = require('webpack');
-const manifest = require('../build/vendor-manifest.json');
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 const helpers = require('./helpers');
+
+const manifest = require('@solid-opinion/vendor-core/dist/bundle-manifest.json')
 
 module.exports = {
   entry: {
@@ -17,6 +18,7 @@ module.exports = {
   plugins: [
     new ForkCheckerPlugin(),
     new webpack.DllReferencePlugin({
-      manifest: require('@solid-opinion/vendor-core/dist/bundle-manifest.json')
+      manifest,
+      sourceType: 'umd'
     })]
 };

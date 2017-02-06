@@ -1,1 +1,0 @@
-import '@solid-opinion/vendor-core'

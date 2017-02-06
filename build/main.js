@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("./vendor.bundle.js"), require("./api.bundle.js"));
+		module.exports = factory(require("./api.bundle.js"), require("@solid-opinion/vendor-core"));
 	else if(typeof define === 'function' && define.amd)
-		define(["vendor.bundle", "api.bundle"], factory);
+		define(["api.bundle", "@solid-opinion/vendor-core"], factory);
 	else if(typeof exports === 'object')
-		exports["ac_main"] = factory(require("vendor.bundle"), require("api.bundle"));
+		exports["ac_main"] = factory(require("api.bundle"), require("@solid-opinion/vendor-core"));
 	else
-		root["ac_main"] = factory(root["vendor.bundle"], root["api.bundle"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_0__, __WEBPACK_EXTERNAL_MODULE_2__) {
+		root["ac_main"] = factory(root["api.bundle"], root["@solid-opinion/vendor-core"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_2__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -78,15 +78,15 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
+module.exports = (__webpack_require__(2))(2);
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = (__webpack_require__(0))(3);
+module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
 
 /***/ }),
 /* 2 */
@@ -98,11 +98,10 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var api = __webpack_require__(2);
-var vendor = __webpack_require__(0);
-var _ = __webpack_require__(1);
+var api = __webpack_require__(1);
+var _ = __webpack_require__(0);
 console.log('api.test() =', api.test());
-console.log('_.get() = ', _.get({ myVar: 'hello from node' }, 'myVar'));
+console.log('_.get() = ', _.get({ myVar: 'hello from lodash' }, 'myVar'));
 
 
 /***/ })

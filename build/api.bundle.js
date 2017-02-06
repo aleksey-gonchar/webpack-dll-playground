@@ -1,12 +1,12 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("./vendor.bundle.js"));
+		module.exports = factory(require("@solid-opinion/vendor-core"));
 	else if(typeof define === 'function' && define.amd)
-		define(["vendor.bundle"], factory);
+		define(["@solid-opinion/vendor-core"], factory);
 	else if(typeof exports === 'object')
-		exports["api.bundle"] = factory(require("vendor.bundle"));
+		exports["api.bundle"] = factory(require("@solid-opinion/vendor-core"));
 	else
-		root["api.bundle"] = factory(root["vendor.bundle"]);
+		root["api.bundle"] = factory(root["@solid-opinion/vendor-core"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE_1__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -80,7 +80,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(1))(3);
+module.exports = (__webpack_require__(1))(2);
 
 /***/ }),
 /* 1 */
@@ -92,10 +92,10 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const lodash = __webpack_require__(0);
+const lodash = __webpack_require__(0)
 
 function test() {
-    return lodash.get({myVar: 'Hello from API'}, 'myVar');
+    return lodash.get({ myVar: 'Hello from test' }, 'myVar');
 }
 
 module.exports = {

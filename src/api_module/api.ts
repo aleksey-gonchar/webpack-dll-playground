@@ -1,7 +1,7 @@
-const lodash = require('lodash');
+const lodash = require('lodash')
 
 function test() {
-    return lodash.get({myVar: 'Hello from API'}, 'myVar');
+    return lodash.get({ myVar: 'Hello from test' }, 'myVar');
 }
 
 module.exports = {

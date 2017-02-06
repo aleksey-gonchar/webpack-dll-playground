@@ -7,8 +7,8 @@ const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin')
 
 const helpers = require('./helpers')
 
-const vendorManifest = require('../build/vendor-manifest.json');
 const commonConfig = require('./common.webpack.conf.js')
+const manifest = require('@solid-opinion/vendor-core/dist/bundle-manifest.json')
 
 const METADATA = {
   title: 'ts+webpack seed',
@@ -29,8 +29,8 @@ module.exports = {
         helpers.root('src') // location of your src
       ),
       new webpack.DllReferencePlugin({
-        context: helpers.root(),
-        manifest: require('@solid-opinion/vendor-core/dist/bundle-manifest.json')
+        manifest,
+        sourceType: 'umd'
       })
     ]
   })
